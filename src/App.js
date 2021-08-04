@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-
+import Keypad from "./Keypad";
 class App extends Component {
     constructor(){
         super();
@@ -20,9 +20,6 @@ class App extends Component {
         else if(button === "C"){
             this.reset()
         }
-        else if(button === "CE"){
-            this.backspace()
-        }
 
         else {
             this.setState({
@@ -34,13 +31,7 @@ class App extends Component {
 
     calculate = () => {
         var checkResult = ''
-        if(this.state.result.includes('--')){
-            checkResult = this.state.result.replace('--','+')
-        }
-
-        else {
             checkResult = this.state.result
-        }
 
         try {
             this.setState({
@@ -72,6 +63,8 @@ class App extends Component {
             <div>
                 <div className="calculator-body">
                     <h1>Simple Calculator</h1>
+                    
+                    <Keypad onClick={this.onClick}/>
                 </div>
             </div>
         );
