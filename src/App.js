@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-
 import Keypad from "./Keypad";
+import Result from "./Result";
 class App extends Component {
     constructor(){
         super();
@@ -63,7 +63,7 @@ class App extends Component {
             <div>
                 <div className="calculator-body">
                     <h1>Simple Calculator</h1>
-                    
+                    <Result result={this.state.result}/>
                     <Keypad onClick={this.onClick}/>
                 </div>
             </div>
